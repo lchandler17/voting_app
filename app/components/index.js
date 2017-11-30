@@ -10,6 +10,7 @@ import Navbar from './nav';
 import About from './about';
 import Signin from './signin';
 import Signup from './signup';
+import Election from './election';
 
 // HELPER FUNCTIONS
 // import Helpers from './util/helpers.js';
@@ -45,12 +46,17 @@ export default class Index extends Component{
 
           <Navbar user={this.state.user} loggedIn={this.state.loggedIn} />
 
-          <Switch>
-              <Route exact path='/' component={Main} />
-              <Route path='/about' component={About} />
-              <Route path='/signin' component={Signin} />
-              <Route path='/signup' component={Signup} /> 
-          </Switch>
+          <div id="bodysection">
+
+            <Switch>
+                <Route exact path='/' component={Main} />
+                <Route path='/about' component={About} />
+                <Route path='/signin' component={Signin} />
+                <Route path='/signup' component={Signup} /> 
+                <Route path='/election' component={Election} /> 
+            </Switch>
+
+          </div>
 
         </div>
 

@@ -7,8 +7,15 @@
 	width: 100%;
 	margin-left: 0;
 	margin-right: 0;
+	padding: 0;
+	max-width: 5000px;
 }
 
 .navbar{
 	width: 100%;
+	background-color: #ACDDE5;
+}
+
+#bodysection{
+	padding: 25px;
 }
