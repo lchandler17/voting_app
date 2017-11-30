@@ -85,7 +85,7 @@ class Navbar extends Component{
                     <NavLink to={'/'} exact className="nav-link">Home</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to={'/about-us'} exact className="nav-link">About Us</NavLink>
+                    <NavLink to={'/about'} exact className="nav-link">About Us</NavLink>
                   </li>
                 </ul>
 

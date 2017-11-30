@@ -8,6 +8,8 @@ import { MemoryRouter as Router, withRouter } from 'react-router-dom'
 import Main from './main';
 import Navbar from './nav';
 import About from './about';
+import Signin from './signin';
+import Signup from './signup';
 
 // HELPER FUNCTIONS
 // import Helpers from './util/helpers.js';
@@ -45,7 +47,9 @@ export default class Index extends Component{
 
           <Switch>
               <Route exact path='/' component={Main} />
-              <Route path='/about' component={About} /> 
+              <Route path='/about' component={About} />
+              <Route path='/signin' component={Signin} />
+              <Route path='/signup' component={Signup} /> 
           </Switch>
 
         </div>

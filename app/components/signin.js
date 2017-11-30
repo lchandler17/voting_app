@@ -1,5 +1,6 @@
 // IMPORT REACT
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom'; 
 
 const Signin= () =>{
   return(
@@ -18,6 +19,11 @@ const Signin= () =>{
 		        <input type="submit" value="Log In"/>
 		    </div>
 		</form>
+
+		<h3>Not registered?</h3>
+		<p>
+			<NavLink to={'/signup'} exact className="nav-link">Click here to create an account</NavLink>
+		</p>
 
     </div>
   )
