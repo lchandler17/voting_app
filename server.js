@@ -71,6 +71,25 @@ app.post('/login',
 	//                                    failureFlash: true })
 	// );
 
+// create new election
+app.post("/newelection", function (req, res) {
+
+});
+
+// populate vote
+app.get("/vote/:electionid", function (req, res) {
+
+});
+
+// log vote
+app.post("/voted", function (req, res) {
+
+});
+
+//view results
+app.get("/results/:electionid", function (req, res) {
+
+});
 
 
 // -------------------------------------------------

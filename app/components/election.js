@@ -1,6 +1,7 @@
-// IMPORT REACT
+// IMPORT DEPENDENCIES
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom'; 
+let Promises = require('bluebird');
 
 class Election extends Component{
 
@@ -15,9 +16,9 @@ class Election extends Component{
 	handleChange(event) {
 		this.setState({value: event.target.value});
 
-		const target = event.target;
-		const name = target.name;
-		const type = target.type;
+		// const target = event.target;
+		const name = event.target.name;
+		const type = event.target.type;
 
 		this.setState({
 	      [name]: this.state.name,
@@ -25,11 +26,26 @@ class Election extends Component{
 	    });
 
 	    console.log(this.state.value);
+	    // console.log(this.state.type);
+	    // console.log(this.type);
+
+	    // this.popEntry();
 	}
 
 	handleSubmit(event) {
-		alert('A name was submitted: ' + this.state.value);
+		// alert('A name was submitted: ' + this.state.value);
+
+
+
 		event.preventDefault();
+	}
+
+	popEntry(event){
+		this.handleChange(event);
+
+		if(this.state.value === "select1"){
+			console.log("SELECT1 WORKS!");
+		}
 	}
 
 	render(){
