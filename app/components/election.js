@@ -1,65 +1,190 @@
 // IMPORT DEPENDENCIES
 import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 import { Link, NavLink } from 'react-router-dom'; 
-let Promises = require('bluebird');
+// let Promises = require('bluebird');
 
 class Election extends Component{
 
 	constructor(props) {
 		super(props);
-		this.state = {value: ''};
+		this.state = {
+			value: '',
+			name: '',
+			title: '',
+			type: ''
+		};
 
-		this.handleChange = this.handleChange.bind(this);
+		this.handleTitleChange = this.handleTitleChange.bind(this);
+		this.handleTypeChange = this.handleTypeChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleChange(event) {
-		this.setState({value: event.target.value});
-
-		// const target = event.target;
-		const name = event.target.name;
-		const type = event.target.type;
-
+	handleTitleChange(event) {
 		this.setState({
-	      [name]: this.state.name,
-	      [type]: this.state.value
+	      title: event.target.value
 	    });
-
-	    console.log(this.state.value);
-	    // console.log(this.state.type);
-	    // console.log(this.type);
-
-	    // this.popEntry();
 	}
+
+	handleTypeChange(event) {
+		this.setState({
+	      type: event.target.value
+	    });
+	}
+
+	handleChange(event) {
+
+				this.setState({value: event.target.value});
+
+				const title = event.target.title.value;
+				const type = event.target.type.value;
+
+				this.setState({
+			      title: title,
+			      type: type
+			      // [type]: this.state.value
+			    });
+
+			    // this.setState({
+			    //   name: this.state.name,
+			    //   type: this.state.value
+			    //   // [type]: this.state.value
+			    // });
+
+			    // console.log(this.state.value);
+			    // console.log(this.state.type);
+			    // console.log(this.type);
+
+			    // this.popEntry();
+		// })
+	}
+
+	// ptest(event){
+	// 	return new Promise((resolve, reject) => {
+	// 		this.handleChange(event){
+	// 			var success = this.state.value;
+	// 			success ? resolve(this.state.value) : reject("Error");
+	// 		}
+
+	// }
 
 	handleSubmit(event) {
-		// alert('A name was submitted: ' + this.state.value);
-
-
-
 		event.preventDefault();
+	
+		// alert('A name was submitted: ' + this.state.value);
+		// this.setState({value: event.target.value});
+
+		// var title = event.target.title;
+		// var type = event.target.type;
+
+		// this.setState({
+		// 	value: event.target.value,
+		// 	title: title,
+		// 	type: type
+		// });
+
+		console.log(event.target);
+		console.log(this.state.title, this.state.type);
+
 	}
 
-	popEntry(event){
-		this.handleChange(event);
+		
 
-		if(this.state.value === "select1"){
-			console.log("SELECT1 WORKS!");
-		}
+	popEntry(){
+		// this.ptest()
+			// .then(
+				// if(this.state.value === "select1"){
+				console.log(this.state.value + "WORKS!")
+			// )
+	}
+
+	newCan(){
+
+	const newCanTest = (	
+		// return(
+			<div>
+				<div>
+			    	<label>Candidate:</label>
+			    	<input className="candidate" type="text" name="candidatenew" onChange={this.handleChange} />
+			    </div>
+
+			    <div id="newCan" />
+			</div>
+			  )
+
+		ReactDOM.render(newCanTest, document.getElementById('newCan'));
+	}
+
+
+
+	subFunc(){
+		// alert("name" + this.name + "value" + this.value);
+		alert(etitle);
+	}
+
+	componentDidMount(){
+	// newPos(){
+	const newPosTest = (
+		// return(
+			<div>
+				<div>
+			    	<label>Position:</label>
+			    	<input id="position1" type="text" name="position1"  onChange={this.handleChange} />
+			    </div>
+			    <div>
+			    	<label>Candidate:</label>
+			    	<input className="candidate" type="text" name="candidate1"  onChange={this.handleChange} />
+			    </div>
+			    <div>
+			    	<label>Candidate:</label>
+			    	<input className="candidate" type="text" name="candidate2" onChange={this.handleChange} />
+			    </div>
+			    <div>
+			    	<label>Candidate:</label>
+			    	<input className="candidate" type="text" name="candidate3"  onChange={this.handleChange} />
+			    </div>
+
+			    <div id="newCan" />
+
+			    <div>
+			    	<input type="submit" value="Add another candidate" onClick={this.newCan} />
+			    </div>
+
+			    <div id="newPos" />
+
+			    <div>
+			    	<input type="submit" value="Add another position" onClick={this.newPos} />
+			    </div>
+
+			</div>
+			   )
+	// }
+
+		ReactDOM.render(newPosTest, document.getElementById('newPos'));
+		console.log("did mount!");
 	}
 
 	render(){
+	  var etype = this.state.type;
+	  console.log("Etype:" + etype);
+
+	  var etitle = this.state.title;
+	  //var etitle = $("#etitle").val();
+	  console.log("etitle:" + etitle);
+
+	  console.log("did render!");
+
 	  return(
 	    <div className="">
 	    	<p>To create a new election, input the following information:</p>
 	    	<form action="/newelection" method="post" onSubmit={this.handleSubmit}>
 			    <div>
 			        <label>Election Title:</label>
-			        <input type="text" name="username" value={this.state.name} onChange={this.handleChange} />
+			        <input id="etitle" type="text" name="title" value={this.state.title} onChange={this.handleTitleChange} />
 			    </div>
 			    <div>
 			        <label>Election Type:			    		
-				        <select value={this.state.value} onChange={this.handleChange}>
+				        <select value={this.state.type} name="type" onChange={this.handleTypeChange}>
 				        		<option value="none">--</option>
 				    			<option value="select1">Select One</option>
 				    			<option value="select2">Select Multiple</option>
@@ -67,13 +192,16 @@ class Election extends Component{
 				    	</select>
 			        </label>
 			    </div>
+
+			    <div id="newPos" />
+
 			    <div>
-			        <input type="submit" value="Submit"/>
+			        <input type="submit" value="Submit" onClick={this.subFunc}/>
 			    </div>
 			</form>
-
 	    </div>
 	  )
+
 	}
 }
 
