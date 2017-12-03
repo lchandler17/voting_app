@@ -33,40 +33,16 @@ class Election extends Component{
 	}
 
 	handleChange(event) {
+		this.setState({value: event.target.value});
 
-				this.setState({value: event.target.value});
+		const title = event.target.title.value;
+		const type = event.target.type.value;
 
-				const title = event.target.title.value;
-				const type = event.target.type.value;
-
-				this.setState({
-			      title: title,
-			      type: type
-			      // [type]: this.state.value
-			    });
-
-			    // this.setState({
-			    //   name: this.state.name,
-			    //   type: this.state.value
-			    //   // [type]: this.state.value
-			    // });
-
-			    // console.log(this.state.value);
-			    // console.log(this.state.type);
-			    // console.log(this.type);
-
-			    // this.popEntry();
-		// })
+		this.setState({
+	      title: title,
+	      type: type
+	    });
 	}
-
-	// ptest(event){
-	// 	return new Promise((resolve, reject) => {
-	// 		this.handleChange(event){
-	// 			var success = this.state.value;
-	// 			success ? resolve(this.state.value) : reject("Error");
-	// 		}
-
-	// }
 
 	handleSubmit(event) {
 		event.preventDefault();
@@ -88,44 +64,27 @@ class Election extends Component{
 
 	}
 
-		
+	handle(event){
 
-	popEntry(){
-		// this.ptest()
-			// .then(
-				// if(this.state.value === "select1"){
-				console.log(this.state.value + "WORKS!")
-			// )
 	}
 
 	newCan(){
-
-	const newCanTest = (	
-		// return(
+		const newCanTest = (	
 			<div>
 				<div>
 			    	<label>Candidate:</label>
-			    	<input className="candidate" type="text" name="candidatenew" onChange={this.handleChange} />
+			    	<input className="candidate" type="text" name="candidatenew" onSubmit={this.handle} />
 			    </div>
 
 			    <div id="newCan" />
 			</div>
-			  )
+		)
 
 		ReactDOM.render(newCanTest, document.getElementById('newCan'));
 	}
 
-
-
-	subFunc(){
-		// alert("name" + this.name + "value" + this.value);
-		alert(etitle);
-	}
-
 	componentDidMount(){
-	// newPos(){
-	const newPosTest = (
-		// return(
+		const newPosTest = (
 			<div>
 				<div>
 			    	<label>Position:</label>
@@ -157,8 +116,7 @@ class Election extends Component{
 			    </div>
 
 			</div>
-			   )
-	// }
+		)
 
 		ReactDOM.render(newPosTest, document.getElementById('newPos'));
 		console.log("did mount!");
