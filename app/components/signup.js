@@ -6,27 +6,32 @@ class Signup extends Component{
 
 	constructor(props) {
 		super(props);
-		this.state = {value: ''};
+		this.state = {
+			name: '',
+			password: '',
+			usertype: ''
+		};
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleChange(event) {
-		this.setState({value: event.target.value});
+	nameChange(event) {
+		this.setState({name: event.target.value});
+	    // console.log(this.state.name);
+	}
 
-		const target = event.target;
-		const name = target.name;
+	passwordChange(event){
+		this.setState({password: event.target.value});
+	}
 
-		this.setState({
-	      [name]: value
-	    });
-
-	    console.log(this.state.name);
+	passwordCheck(event){
+		//compare second entry to this.state.password
 	}
 
 	handleSubmit(event) {
-		alert('A name was submitted: ' + this.state.value);
+		//write user info to database
+
 		event.preventDefault();
 	}
 
@@ -37,15 +42,15 @@ class Signup extends Component{
 	    	<form action="/createuser" method="post" onSubmit={this.handleSubmit}>
 			    <div>
 			        <label>New Username:</label>
-			        <input type="text" name="username" value={this.state.name} onChange={this.handleChange} />
+			        <input type="text" name="username" value={this.state.name} onChange={this.nameChange} />
 			    </div>
 			    <div>
 			        <label>Choose Password:</label>
-			        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+			        <input type="password" name="password" value={this.state.password} onChange={this.passwordChange} />
 			    </div>
 			    <div>
 			        <label>Confirm Password:</label>
-			        <input type="password" name="password2" onChange={this.handleChange} />
+			        <input type="password" name="password2" onChange={this.passwordCheck} />
 			    </div>
 			    <div>
 			        <label>Will you be an election administrator or a voter?			    		
@@ -56,7 +61,7 @@ class Signup extends Component{
 			        </label>
 			    </div>
 			    <div>
-			        <input type="submit" value="Register"/>
+			        <input type="submit" value="Register" />
 			    </div>
 			</form>
 

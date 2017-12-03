@@ -6,7 +6,9 @@ class Navbar extends Component{
   constructor(props){
     super(props);
     
-    this.state = { user: '' };
+    this.state = { 
+      user: '' 
+    };
   }
   
    render(){
@@ -39,9 +41,8 @@ class Navbar extends Component{
                     Vote
                   </a>
                   <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item" href="#">Ice Cream</a>
-                    <a className="dropdown-item" href="#">Cookies</a>
-                    <a className="dropdown-item" href="#">Pie</a>
+                    <a className="dropdown-item" href="/vote/E_id_111">Ice Cream</a>
+                    <a className="dropdown-item" href="/vote/E_id_112">Pie</a>
                   </div>
                 </li>
                 <li className="nav-item">
@@ -50,9 +51,6 @@ class Navbar extends Component{
               </ul>
               
               <ul className="nav navbar-nav navbar-right">
-                <li className="nav-item">
-                  <span>Welcome {this.props.user.Name}</span>
-                </li>
                 <li className="nav-item">
                   <a className="btn btn-primary" href="/logout">Log Out</a>
                 </li>

@@ -11,17 +11,22 @@ import About from './about';
 import Signin from './signin';
 import Signup from './signup';
 import Election from './election';
+import Vote from './vote';
 
 // HELPER FUNCTIONS
 // import Helpers from './util/helpers.js';
 
 // CREATE INDEX COMPONENT
 export default class Index extends Component{
+  
   constructor(props){
     super(props);
-    this.state = { user: '', loggedIn: false };
+    this.state = { 
+      user: '', 
+      loggedIn: false 
+    };
   }
-  // Will run right before mounting component
+
   // componentWillMount(){
   //   // get user data in session and save in state
   //   axios.get('/user').then((response) => {
@@ -54,6 +59,7 @@ export default class Index extends Component{
                 <Route path='/signin' component={Signin} />
                 <Route path='/signup' component={Signup} /> 
                 <Route path='/election' component={Election} /> 
+                <Route path='/vote' component={Vote} />
             </Switch>
 
           </div>

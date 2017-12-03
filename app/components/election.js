@@ -12,12 +12,15 @@ class Election extends Component{
 			value: '',
 			name: '',
 			title: '',
-			type: ''
+			type: '',
+			candidate: '',
+			position: ''
 		};
 
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.handleTypeChange = this.handleTypeChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleTitleChange(event) {
@@ -44,28 +47,17 @@ class Election extends Component{
 	    });
 	}
 
+	handle(event){
+		this.setState({
+	      candidate: event.target.value
+	    });
+	}
+
 	handleSubmit(event) {
 		event.preventDefault();
 	
-		// alert('A name was submitted: ' + this.state.value);
-		// this.setState({value: event.target.value});
-
-		// var title = event.target.title;
-		// var type = event.target.type;
-
-		// this.setState({
-		// 	value: event.target.value,
-		// 	title: title,
-		// 	type: type
-		// });
-
 		console.log(event.target);
 		console.log(this.state.title, this.state.type);
-
-	}
-
-	handle(event){
-
 	}
 
 	newCan(){
@@ -73,7 +65,7 @@ class Election extends Component{
 			<div>
 				<div>
 			    	<label>Candidate:</label>
-			    	<input className="candidate" type="text" name="candidatenew" onSubmit={this.handle} />
+			    	<input className="candidate" type="text" name="candidatenew" />
 			    </div>
 
 			    <div id="newCan" />
@@ -81,45 +73,46 @@ class Election extends Component{
 		)
 
 		ReactDOM.render(newCanTest, document.getElementById('newCan'));
+		// $("#newCan").append(newCanTest);
 	}
 
 	componentDidMount(){
 		const newPosTest = (
 			<div>
-				<div>
+				<div className="position">
 			    	<label>Position:</label>
-			    	<input id="position1" type="text" name="position1"  onChange={this.handleChange} />
+			    	<input type="text" name="position1"  onChange={this.handleChange} />
 			    </div>
-			    <div>
+			    <div className="candidate" >
 			    	<label>Candidate:</label>
-			    	<input className="candidate" type="text" name="candidate1"  onChange={this.handleChange} />
+			    	<input type="text" name="candidate1"  onChange={this.handleChange} />
 			    </div>
-			    <div>
+			    <div className="candidate" >
 			    	<label>Candidate:</label>
-			    	<input className="candidate" type="text" name="candidate2" onChange={this.handleChange} />
+			    	<input type="text" name="candidate2" onChange={this.handleChange} />
 			    </div>
-			    <div>
+			    <div className="candidate" >
 			    	<label>Candidate:</label>
-			    	<input className="candidate" type="text" name="candidate3"  onChange={this.handleChange} />
+			    	<input type="text" name="candidate3"  onChange={this.handleChange} />
 			    </div>
 
 			    <div id="newCan" />
 
 			    <div>
-			    	<input type="submit" value="Add another candidate" onClick={this.newCan} />
+			    	<input className="button addbutton" type="submit" value="Add another candidate" onClick={this.newCan} />
 			    </div>
 
 			    <div id="newPos" />
 
 			    <div>
-			    	<input type="submit" value="Add another position" onClick={this.newPos} />
+			    	<input className="button addbutton" type="submit" value="Add another position" onClick={this.newPos} />
 			    </div>
 
 			</div>
 		)
 
 		ReactDOM.render(newPosTest, document.getElementById('newPos'));
-		console.log("did mount!");
+		// console.log("did mount!");
 	}
 
 	render(){
@@ -130,7 +123,7 @@ class Election extends Component{
 	  //var etitle = $("#etitle").val();
 	  console.log("etitle:" + etitle);
 
-	  console.log("did render!");
+	  // console.log("did render!");
 
 	  return(
 	    <div className="">
@@ -154,7 +147,7 @@ class Election extends Component{
 			    <div id="newPos" />
 
 			    <div>
-			        <input type="submit" value="Submit" onClick={this.subFunc}/>
+			        <input className="button subbutton" type="submit" value="Submit" onClick={this.subFunc}/>
 			    </div>
 			</form>
 	    </div>
