@@ -15,10 +15,18 @@ class Vote extends Component{
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	handleSubmit(event){
+		//send votes to database
+	}
+
 	render(){
+		return(
+			<div className="">
 
-		
+				<p>Hey, Hey Ya...</p>
 
+			</div>
+		)
 	}
 
 }

@@ -41,8 +41,8 @@ class Navbar extends Component{
                     Vote
                   </a>
                   <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item" href="/vote/E_id_111">Ice Cream</a>
-                    <a className="dropdown-item" href="/vote/E_id_112">Pie</a>
+                    <NavLink to={'/vote/E_id_111'} className="dropdown-item">Ice Cream</NavLink>
+                    <NavLink to={'/vote/E_id_112'} className="dropdown-item">Pie</NavLink>
                   </div>
                 </li>
                 <li className="nav-item">

@@ -54,10 +54,17 @@ class Election extends Component{
 	}
 
 	handleSubmit(event) {
+		//escape data before posting
+			//REF:
+			//https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
+			//https://medium.com/node-security/the-most-common-xss-vulnerability-in-react-js-applications-2bdffbcc1fa0
+
+		//post to database
+
 		event.preventDefault();
 	
-		console.log(event.target);
-		console.log(this.state.title, this.state.type);
+		// console.log(event.target);
+		// console.log(this.state.title, this.state.type);
 	}
 
 	newCan(){
@@ -65,7 +72,7 @@ class Election extends Component{
 			<div>
 				<div>
 			    	<label>Candidate:</label>
-			    	<input className="candidate" type="text" name="candidatenew" />
+			    	<input type="text" className="candidate" />
 			    </div>
 
 			    <div id="newCan" />
@@ -76,24 +83,40 @@ class Election extends Component{
 		// $("#newCan").append(newCanTest);
 	}
 
+	columnNaming(){
+		var candidates = document.getElementsByClassName("candidate");
+		  
+		for (var i = 0; i < candidates.length; i++) {
+			candidates[i].setAttribute("name", "can" + i);
+		}
+
+		var positions = document.getElementsByClassName("position");
+		  
+		for (var i = 0; i < positions.length; i++) {
+			positions[i].setAttribute("name", "pos" + i);
+		}
+
+		console.log("naming complete");
+	}
+
 	componentDidMount(){
-		const newPosTest = (
+		const newPos = (
 			<div>
 				<div className="position">
 			    	<label>Position:</label>
-			    	<input type="text" name="position1"  onChange={this.handleChange} />
+			    	<input type="text" className="position"  onChange={this.handleChange} />
 			    </div>
-			    <div className="candidate" >
+			    <div className="canForm">
 			    	<label>Candidate:</label>
-			    	<input type="text" name="candidate1"  onChange={this.handleChange} />
+			    	<input type="text" className="candidate"  onChange={this.handleChange} />
 			    </div>
-			    <div className="candidate" >
+			    <div className="canForm">
 			    	<label>Candidate:</label>
-			    	<input type="text" name="candidate2" onChange={this.handleChange} />
+			    	<input type="text" className="candidate" onChange={this.handleChange} />
 			    </div>
-			    <div className="candidate" >
+			    <div className="canForm">
 			    	<label>Candidate:</label>
-			    	<input type="text" name="candidate3"  onChange={this.handleChange} />
+			    	<input type="text" className="candidate"  onChange={this.handleChange} />
 			    </div>
 
 			    <div id="newCan" />
@@ -111,8 +134,9 @@ class Election extends Component{
 			</div>
 		)
 
-		ReactDOM.render(newPosTest, document.getElementById('newPos'));
+		ReactDOM.render(newPos, document.getElementById('newPos'));
 		// console.log("did mount!");
+		this.columnNaming();
 	}
 
 	render(){

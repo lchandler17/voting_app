@@ -16,7 +16,7 @@ var ElectionSchema = new Schema({
     type: String,
     required: true
   },
-  Candidates: [{
+  Candidate: [{
     type: Schema.Types.ObjectId,
     ref: "Candidate_mod"
   }]

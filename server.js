@@ -78,7 +78,16 @@ app.post("/newelection", function (req, res) {
 
 // populate vote
 app.get("/vote/:electionid", function (req, res) {
-
+  Election.findOne({ _id : electionid })
+          .populate("Candidate")
+          .exec(function(err, user) {
+              if (err) {
+                  console.log(err);
+              }
+              else {
+                res.json({ Candidate: Election.Candidate });
+              }
+          });
 });
 
 // log vote
