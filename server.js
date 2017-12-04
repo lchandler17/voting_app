@@ -77,7 +77,7 @@ app.post("/newelection", function (req, res) {
 });
 
 // populate vote
-app.get("/vote/:electionid", function (req, res) {
+app.get("/api/:electionid", function (req, res) {
   Election.findOne({ _id : electionid })
           .populate("Candidate")
           .exec(function(err, user) {

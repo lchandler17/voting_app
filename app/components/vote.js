@@ -4,6 +4,8 @@ import ReactDOM from "react-dom";
 import { Link, NavLink } from 'react-router-dom'; 
 // let Promises = require('bluebird');
 
+import helpers from './util/helpers';
+
 class Vote extends Component{
 
 	constructor(props) {
@@ -17,6 +19,13 @@ class Vote extends Component{
 
 	handleSubmit(event){
 		//send votes to database
+	}
+
+	loadElection(){
+		helpers.getElection()
+			.then((response) => {
+				//map in data to render on page
+			});
 	}
 
 	render(){
