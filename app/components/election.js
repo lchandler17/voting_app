@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import ReactDOM from "react-dom";
 import { Link, NavLink } from 'react-router-dom'; 
-// let Promises = require('bluebird');
 
 class Election extends Component{
 
@@ -80,7 +79,6 @@ class Election extends Component{
 		)
 
 		ReactDOM.render(newCanTest, document.getElementById('newCan'));
-		// $("#newCan").append(newCanTest);
 	}
 
 	columnNaming(){
@@ -140,12 +138,11 @@ class Election extends Component{
 	}
 
 	render(){
-	  var etype = this.state.type;
-	  console.log("Etype:" + etype);
+	  // var etype = this.state.type;
+	  // console.log("Etype:" + etype);
 
-	  var etitle = this.state.title;
-	  //var etitle = $("#etitle").val();
-	  console.log("etitle:" + etitle);
+	  // var etitle = this.state.title;
+	  // console.log("etitle:" + etitle);
 
 	  // console.log("did render!");
 
@@ -171,7 +168,7 @@ class Election extends Component{
 			    <div id="newPos" />
 
 			    <div>
-			        <input className="button subbutton" type="submit" value="Submit" onClick={this.subFunc}/>
+			        <input className="button subbutton" type="submit" value="Submit" onClick={this.handleSubmit}/>
 			    </div>
 			</form>
 	    </div>
