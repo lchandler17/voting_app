@@ -47,6 +47,9 @@ class Vote extends Component{
 		// 				</div>
 		// 			)
 		//         });
+		//
+		//		//LOAD TYPE TO POPULATE INSTRUCTIONS
+		//
 		// 	});
 
 		//FOR PURPOSE OF THIS EXAMPLE, SET STATE MANUALLY
@@ -100,6 +103,8 @@ class Vote extends Component{
 
 				<h3>Now Voting for:</h3>
 				<h1 className="electiontitle">{this.state.electiontitle}</h1>
+				<hr />
+				<p>Please select one candidate for each position.</p>
 				<hr />
 
 				<form action="/voted" method="post" onSubmit={this.handleSubmit}>

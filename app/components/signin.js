@@ -1,5 +1,5 @@
 // IMPORT REACT
-import React from 'react';
+import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom'; 
 
 class Signin extends Component{
