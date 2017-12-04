@@ -12,7 +12,7 @@ class Navbar extends Component{
   }
   
    render(){
-    // IF there is a user logged in, return user navbar
+    // IF USER IS LOGGED IN, RETURN USER NAV BAR
     // if(this.props.user){
       return(
         <div className="header">
@@ -62,8 +62,8 @@ class Navbar extends Component{
     //   )
     // }
     
-    // Default navbar (no user logged in)
-    //see extra
+    // IF NO USER IS LOGGED IN, RETURN DEFAULT NAV BAR
+    // (see notes)
     )
   }
 }

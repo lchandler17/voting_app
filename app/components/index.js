@@ -1,7 +1,6 @@
 // IMPORT REACT
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import axios from 'axios';
 import { MemoryRouter as Router, withRouter } from 'react-router-dom'
 
 // INCLUDE SUBCOMPONENTS
@@ -12,13 +11,11 @@ import Signin from './signin';
 import Signup from './signup';
 import Election from './election';
 import Vote from './vote';
-
-// HELPER FUNCTIONS
-// import Helpers from './util/helpers.js';
+import Results from './results';
 
 // CREATE INDEX COMPONENT
 export default class Index extends Component{
-  
+
   constructor(props){
     super(props);
     this.state = { 
@@ -60,6 +57,7 @@ export default class Index extends Component{
                 <Route path='/signup' component={Signup} /> 
                 <Route path='/election' component={Election} /> 
                 <Route path='/vote' component={Vote} />
+                <Route path='/results' component={Results} />
             </Switch>
 
           </div>

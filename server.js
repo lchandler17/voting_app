@@ -95,7 +95,7 @@ app.post("/voted", function (req, res) {
 
 });
 
-//view results
+// view results
 app.get("/results/:electionid", function (req, res) {
 
 });

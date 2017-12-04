@@ -33,7 +33,7 @@ class Vote extends Component{
 	loadElection(){
 		// helpers.getElection()
 		// 	.then((response) => {
-		// 		//map in data to render on page
+		// 		//MAP IN DATA TO RENDER ON PAGE
 		// 		let candidates = response.data.Candidate;  
 		// 	    if(candidates){
 		// 	        let canlist = candidates.map((name) => {
@@ -49,7 +49,7 @@ class Vote extends Component{
 		//         });
 		// 	});
 
-		//for purpose of this example, set state manually
+		//FOR PURPOSE OF THIS EXAMPLE, SET STATE MANUALLY
 		this.setState({
 			electiontitle: "Ice Cream",
 			position1: 'Most Awesome',
@@ -70,14 +70,21 @@ class Vote extends Component{
 		console.log("loaded!");
 	}
 
-	handleOptionChange(changeEvent){
+	handleOptionChange(event){
+		//REF:
+		//http://react.tips/radio-buttons-in-reactjs/
+		//https://stackoverflow.com/questions/35451287/react-cant-uncheck-radio-button
+		//https://github.com/facebook/react/issues/1471
+
+		event.preventDefault();
+
 		this.setState({
-		    selectedOption: changeEvent.target.value
+		    selectedOption: event.target.value
 		});
 	}
 
 	handleSubmit(event){
-		//post to database
+		//POST TO DATABASE
 
 		event.preventDefault();
 	}

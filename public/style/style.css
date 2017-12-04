@@ -6,6 +6,12 @@
 	max-width: 5000px;
 }
 
+#bodysection{
+	padding: 25px;
+}
+
+/*NAVBAR ELEMENTS*/
+
 .navbar{
 	width: 100%;
 	background-color: #ACDDE5;
@@ -20,9 +26,7 @@
 	text-decoration: none;
 }
 
-#bodysection{
-	padding: 25px;
-}
+/*FORM ELEMENTS*/
 
 .canForm{
 	padding-left: 20px;

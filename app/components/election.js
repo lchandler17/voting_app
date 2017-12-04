@@ -53,12 +53,12 @@ class Election extends Component{
 	}
 
 	handleSubmit(event) {
-		//escape data before posting
+		//ESCAPE DATA BEFORE POSTING
 			//REF:
 			//https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
 			//https://medium.com/node-security/the-most-common-xss-vulnerability-in-react-js-applications-2bdffbcc1fa0
 
-		//post to database
+		//POST TO DATABASE
 
 		event.preventDefault();
 	
