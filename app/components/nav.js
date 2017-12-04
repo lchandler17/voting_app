@@ -46,7 +46,7 @@ class Navbar extends Component{
                   </div>
                 </li>
                 <li className="nav-item">
-                  <NavLink to={''} className="nav-link">Results</NavLink>
+                  <NavLink to={'/results'} className="nav-link">Results</NavLink>
                 </li>
               </ul>
               

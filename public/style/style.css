@@ -49,3 +49,11 @@
 .radio{
 	padding-left: 20px;
 }
+
+input{
+	margin: 5px;
+}
+
+.electiontitle{
+	font-weight: bold;
+}

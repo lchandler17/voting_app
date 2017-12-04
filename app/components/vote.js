@@ -99,7 +99,7 @@ class Vote extends Component{
 			<div className="">
 
 				<h3>Now Voting for:</h3>
-				<h1>{this.state.electiontitle}</h1>
+				<h1 className="electiontitle">{this.state.electiontitle}</h1>
 				<hr />
 
 				<form action="/voted" method="post" onSubmit={this.handleSubmit}>
